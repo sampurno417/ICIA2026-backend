@@ -20,12 +20,20 @@ export const sendConfirmationEmail = async (id, email) => {
       from: process.env.CONFIRMATION_EMAIL,
       to: email,
       subject: "Registration Confirmed - ICIA 2026",
-      html: `<h2>Thank you for registering for ICIA 2026</h2><p>Please find your QR code below.</p><img src="cid:qrcode" />`,
+      html: `
+        <h2>Thank you for registering for ICIA 2026</h2>
+        <p>Please find your QR code below. A copy is also attached as a PNG file.</p>
+        <img src="cid:qrcode" alt="QR Code" style="width:150px;" />
+      `,
       attachments: [
         {
           filename: "qrcode.png",
           content: qrCodeBuffer,
           cid: "qrcode",
+        },
+        {
+          filename: "qrcode-attachment.png",
+          content: qrCodeBuffer,
         },
       ],
     }
