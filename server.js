@@ -10,6 +10,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+app.use('/', registrationRoutes )
 app.use('/api/registration', registrationRoutes)
 
 mongoose.connect(process.env.MONGO_URI, {

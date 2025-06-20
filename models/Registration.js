@@ -7,7 +7,7 @@ const registrationSchema = new mongoose.Schema({
   paperTitle: String,
   email: String,
   phone: Number,
-  paymentId: String,
+  paymentId: { type: String, required: true, unique: true },
   amountPaid: Number,
   type: String, // student, scholar, industry, etc.
   proofImage: String, // ✅ New field for Cloudinary URL
