@@ -14,4 +14,4 @@ const registrationSchema = new mongoose.Schema({
   isVerified: {type: Boolean , default: false}
 }, { timestamps: true })
 
-export default mongoose.model('Registration', registrationSchema)
+export default mongoose.model('sristipirates', registrationSchema)
